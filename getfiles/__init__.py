@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+__all__ = ['getfiles']
+
+
 import os
-import public
 
 
 def _iter_files(path):
@@ -9,7 +10,6 @@ def _iter_files(path):
             yield os.path.join(root, f)
 
 
-@public.add
 def getfiles(path):
     """return a list of all files in the directory and subdirectories"""
     return list(_iter_files(path))
